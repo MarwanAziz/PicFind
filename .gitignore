@@ -1,0 +1,26 @@
+# Xcode
+*.xcworkspace
+xcuserdata/
+DerivedData/
+.DS_Store
+
+# Build artifacts
+*.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+build/
+*.xcworkspace/xcuserdata/
+
+# Core Data
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Swift Package Manager
+.swiftpm
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# IDE configurations
+*.xcscmblueprint
