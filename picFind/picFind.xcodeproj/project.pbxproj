@@ -15,7 +15,7 @@
 		BA5DC8E82CD16B5700B4F6DD /* picFindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8E72CD16B5700B4F6DD /* picFindTests.swift */; };
 		BA5DC8F22CD16B5700B4F6DD /* picFindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8F12CD16B5700B4F6DD /* picFindUITests.swift */; };
 		BA5DC8F42CD16B5700B4F6DD /* picFindUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8F32CD16B5700B4F6DD /* picFindUITestsLaunchTests.swift */; };
-		BA5DC9062CD1787900B4F6DD /* ApiServices in Frameworks */ = {isa = PBXBuildFile; productRef = BA5DC9052CD1787900B4F6DD /* ApiServices */; };
+		BA5DC90B2CD1A5FA00B4F6DD /* ApiServices in Frameworks */ = {isa = PBXBuildFile; productRef = BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,8 @@
 		BA5DC8ED2CD16B5700B4F6DD /* picFindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = picFindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5DC8F12CD16B5700B4F6DD /* picFindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picFindUITests.swift; sourceTree = "<group>"; };
 		BA5DC8F32CD16B5700B4F6DD /* picFindUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picFindUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		BA5DC9032CD1759D00B4F6DD /* Packages */ = {isa = PBXFileReference; lastKnownFileType = text; path = Packages; sourceTree = SOURCE_ROOT; };
+		BA5DC9072CD1A47E00B4F6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BA5DC9092CD1A53D00B4F6DD /* Packages */ = {isa = PBXFileReference; lastKnownFileType = text; path = Packages; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA5DC9062CD1787900B4F6DD /* ApiServices in Frameworks */,
+				BA5DC90B2CD1A5FA00B4F6DD /* ApiServices in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +102,8 @@
 		BA5DC8D22CD16B5500B4F6DD /* picFind */ = {
 			isa = PBXGroup;
 			children = (
-				BA5DC9022CD1757400B4F6DD /* Packages */,
+				BA5DC9082CD1A4F000B4F6DD /* AppLibraries */,
+				BA5DC9072CD1A47E00B4F6DD /* Info.plist */,
 				BA5DC8D32CD16B5500B4F6DD /* picFindApp.swift */,
 				BA5DC8D52CD16B5500B4F6DD /* ContentView.swift */,
 				BA5DC8D72CD16B5500B4F6DD /* Item.swift */,
@@ -137,19 +139,19 @@
 			path = picFindUITests;
 			sourceTree = "<group>";
 		};
-		BA5DC9022CD1757400B4F6DD /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				BA5DC9032CD1759D00B4F6DD /* Packages */,
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
 		BA5DC9042CD1787900B4F6DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA5DC9082CD1A4F000B4F6DD /* AppLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				BA5DC9092CD1A53D00B4F6DD /* Packages */,
+			);
+			path = AppLibraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +171,7 @@
 			);
 			name = picFind;
 			packageProductDependencies = (
-				BA5DC9052CD1787900B4F6DD /* ApiServices */,
+				BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */,
 			);
 			productName = picFind;
 			productReference = BA5DC8D02CD16B5500B4F6DD /* picFind.app */;
@@ -451,6 +453,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = picFind/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -489,6 +492,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = picFind/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -646,7 +650,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BA5DC9052CD1787900B4F6DD /* ApiServices */ = {
+		BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ApiServices;
 		};

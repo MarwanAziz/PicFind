@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import ApiServices
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
@@ -24,15 +25,10 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
             .toolbar {
-#if os(iOS)
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-#endif
                 ToolbarItem {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
@@ -42,6 +38,17 @@ struct ContentView: View {
         } detail: {
             Text("Select an item")
         }
+        .onAppear(perform: {
+          Task {
+            let apiServices = ApiServicesImp()
+            do {
+              let images = try await apiServices.searchImages(searchTerm: "mercedes")
+              print("images count: \(images.count)")
+            } catch {
+              print("Error fetching images: \(error)")
+            }
+          }
+        })
     }
 
     private func addItem() {

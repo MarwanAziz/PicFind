@@ -7,7 +7,25 @@
 		<key>picFind.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>BA5DC8CF2CD16B5500B4F6DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BA5DC8E22CD16B5700B4F6DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BA5DC8EC2CD16B5700B4F6DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

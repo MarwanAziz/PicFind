@@ -3,8 +3,6 @@
 
 import PackageDescription
 
-import PackageDescription
-
 let package = Package(
   name: "Packages",
   defaultLocalization: "en",
@@ -21,7 +19,8 @@ let package = Package(
       name: "ApiServices"
     ),
     .testTarget(
-      name: "ApiServicesTest"
+      name: "ApiServicesTest",
+      dependencies: ["ApiServices"]
     ),
   ]
 )
