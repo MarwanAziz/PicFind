@@ -16,6 +16,7 @@
 		BA5DC8F22CD16B5700B4F6DD /* picFindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8F12CD16B5700B4F6DD /* picFindUITests.swift */; };
 		BA5DC8F42CD16B5700B4F6DD /* picFindUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8F32CD16B5700B4F6DD /* picFindUITestsLaunchTests.swift */; };
 		BA5DC90B2CD1A5FA00B4F6DD /* ApiServices in Frameworks */ = {isa = PBXBuildFile; productRef = BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */; };
+		BA92758A2CD2C4BD003CA3CC /* AppStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BA9275892CD2C4BD003CA3CC /* AppStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA92758A2CD2C4BD003CA3CC /* AppStorage in Frameworks */,
 				BA5DC90B2CD1A5FA00B4F6DD /* ApiServices in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +174,7 @@
 			name = picFind;
 			packageProductDependencies = (
 				BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */,
+				BA9275892CD2C4BD003CA3CC /* AppStorage */,
 			);
 			productName = picFind;
 			productReference = BA5DC8D02CD16B5500B4F6DD /* picFind.app */;
@@ -653,6 +656,10 @@
 		BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ApiServices;
+		};
+		BA9275892CD2C4BD003CA3CC /* AppStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

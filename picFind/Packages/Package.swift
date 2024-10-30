@@ -8,10 +8,13 @@ let package = Package(
   defaultLocalization: "en",
   platforms: [.iOS(.v17)],
   products: [
-    // Products define the executables and libraries a package produces, and make them visible to other packages.
     .library(
       name: "ApiServices",
       targets: ["ApiServices"]
+    ),
+    .library(
+      name: "AppStorage",
+      targets: ["AppStorage"]
     )
   ],
   targets: [
@@ -21,6 +24,13 @@ let package = Package(
     .testTarget(
       name: "ApiServicesTest",
       dependencies: ["ApiServices"]
+    ),
+    .target(
+      name: "AppStorage"
+    ),
+    .testTarget(
+      name: "AppStorageTest",
+      dependencies: ["AppStorage"]
     ),
   ]
 )
