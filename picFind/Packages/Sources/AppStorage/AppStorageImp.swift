@@ -42,7 +42,7 @@ extension AppStorage {
     SearchDataModel(searchTerm: search.searchTerm, timestamp: search.timestamp)
   }
 
-  func storeImage(image: ImageDataModel) async {
+  public func storeImage(image: ImageDataModel) async {
     context.insert(transform(image))
   }
 
@@ -52,12 +52,12 @@ extension AppStorage {
     return images ?? []
   }
 
-  func fetchImages() async -> [ImageDataModel] {
+  public func fetchImages() async -> [ImageDataModel] {
     let images = await requestImages()
     return images.map { transform($0) }
   }
 
-  func deleteImage(image: ImageDataModel) async {
+  public func deleteImage(image: ImageDataModel) async {
     let imageId = image.imageId
     do {
       try context.delete(model: ImageData.self, where: #Predicate<ImageData> { storedImage in
@@ -68,7 +68,7 @@ extension AppStorage {
     }
   }
 
-  func storeSearch(search: SearchDataModel) async {
+  public func storeSearch(search: SearchDataModel) async {
     context.insert(transform(search))
   }
 
@@ -78,11 +78,11 @@ extension AppStorage {
     return searches ?? []
   }
 
-  func fetchAllSearch() async -> [SearchDataModel] {
+  public func fetchAllSearch() async -> [SearchDataModel] {
     await requestSearch().map(transform(_:))
   }
 
-  func deleteSearch(search: SearchDataModel) async {
+  public func deleteSearch(search: SearchDataModel) async {
     let searchTimestamp = search.timestamp
     do {
       try context.delete(model: SearchData.self, where: #Predicate { $0.timestamp == searchTimestamp})

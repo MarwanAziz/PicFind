@@ -7,7 +7,7 @@
 import Foundation
 
 public protocol ApiServices {
-  func searchImages(searchTerm: String) async throws -> [ImageData]
+  func searchImages(searchTerm: String) async throws -> [APIImageData]
 }
 
 extension ApiServices {

@@ -15,6 +15,10 @@ let package = Package(
     .library(
       name: "AppStorage",
       targets: ["AppStorage"]
+    ),
+    .library(
+      name: "DataManager",
+      targets: ["DataManager"]
     )
   ],
   targets: [
@@ -32,5 +36,13 @@ let package = Package(
       name: "AppStorageTest",
       dependencies: ["AppStorage"]
     ),
+    .target(
+      name: "DataManager",
+      dependencies: ["ApiServices", "AppStorage"]
+    ),
+    .testTarget(
+      name: "DataManagerTest",
+      dependencies: ["DataManager", "ApiServices", "AppStorage"]
+    )
   ]
 )

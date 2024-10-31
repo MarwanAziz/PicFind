@@ -6,14 +6,10 @@
 
 import Foundation
 
-public struct ImageData: Codable {
+public struct APISearchData: Codable {
   let id: String?
   let title: String?
   let description: String?
-  let width: Int?
-  let height: Int?
-  let size: Int?
   let views: Int?
-  let favorite: Bool?
-  let link: String?
+  let images: [APIImageData]?
 }

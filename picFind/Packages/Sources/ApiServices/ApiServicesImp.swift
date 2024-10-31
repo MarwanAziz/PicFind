@@ -26,7 +26,7 @@ public struct ApiServicesImp: ApiServices {
     return request
   }
 
-  public func searchImages(searchTerm: String) async throws -> [ImageData] {
+  public func searchImages(searchTerm: String) async throws -> [APIImageData] {
     guard let request = createUrlRequest(for: searchTerm) else {
       return []
     }

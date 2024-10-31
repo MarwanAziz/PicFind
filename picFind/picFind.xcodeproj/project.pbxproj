@@ -17,6 +17,7 @@
 		BA5DC8F42CD16B5700B4F6DD /* picFindUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8F32CD16B5700B4F6DD /* picFindUITestsLaunchTests.swift */; };
 		BA5DC90B2CD1A5FA00B4F6DD /* ApiServices in Frameworks */ = {isa = PBXBuildFile; productRef = BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */; };
 		BA92758A2CD2C4BD003CA3CC /* AppStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BA9275892CD2C4BD003CA3CC /* AppStorage */; };
+		BA92758C2CD30292003CA3CC /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = BA92758B2CD30292003CA3CC /* DataManager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 			files = (
 				BA92758A2CD2C4BD003CA3CC /* AppStorage in Frameworks */,
 				BA5DC90B2CD1A5FA00B4F6DD /* ApiServices in Frameworks */,
+				BA92758C2CD30292003CA3CC /* DataManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +177,7 @@
 			packageProductDependencies = (
 				BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */,
 				BA9275892CD2C4BD003CA3CC /* AppStorage */,
+				BA92758B2CD30292003CA3CC /* DataManager */,
 			);
 			productName = picFind;
 			productReference = BA5DC8D02CD16B5500B4F6DD /* picFind.app */;
@@ -660,6 +663,10 @@
 		BA9275892CD2C4BD003CA3CC /* AppStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppStorage;
+		};
+		BA92758B2CD30292003CA3CC /* DataManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataManager;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

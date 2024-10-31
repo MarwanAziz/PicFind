@@ -6,7 +6,16 @@
 
 import Foundation
 
-public struct ImageDataModel {
+public struct DMSearchDataModel {
+  public let searchTerm: String
+  public let timestamp: Date
+  public init(searchTerm: String, timestamp: Date) {
+    self.searchTerm = searchTerm
+    self.timestamp = timestamp
+  }
+}
+
+public struct DMImageDataModel {
   public let imageId: String
   public let title: String?
   public let imageDescription: String?

@@ -7,7 +7,7 @@
 import Foundation
 
 public struct ImgurSearchResponse: Codable {
-  let data: [SearchData]?
+  let data: [APISearchData]?
   let success: Bool?
   let status: Int?
 }

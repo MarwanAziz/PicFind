@@ -9,4 +9,9 @@ import Foundation
 public struct SearchDataModel {
   public let searchTerm: String
   public let timestamp: Date
+
+  public init(searchTerm: String, timestamp: Date) {
+    self.searchTerm = searchTerm
+    self.timestamp = timestamp
+  }
 }

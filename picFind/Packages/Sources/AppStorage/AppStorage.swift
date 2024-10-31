@@ -7,7 +7,7 @@
 import Foundation
 import SwiftData
 
-public class AppStorage {
+public class AppStorage: Storage {
   public static let shared = AppStorage()
   private var localModelContainer: ModelContainer
   private var localContext: ModelContext
