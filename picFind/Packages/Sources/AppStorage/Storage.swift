@@ -8,10 +8,10 @@
 import Foundation
 
 public protocol Storage {
-  func storeImage(image: ImageDataModel) async
-  func fetchImages() async -> [ImageDataModel]
-  func deleteImage(image: ImageDataModel) async
-  func storeSearch(search: SearchDataModel) async
-  func fetchAllSearch() async -> [SearchDataModel]
-  func deleteSearch(search: SearchDataModel) async
+  func storeImage(image: ImageDataModel)
+  func fetchImages() -> [ImageDataModel]
+  func deleteImage(image: ImageDataModel)
+  func storeSearch(search: SearchDataModel)
+  func fetchAllSearch() -> [SearchDataModel]
+  func deleteSearch(search: SearchDataModel)
 }

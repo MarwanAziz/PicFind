@@ -42,22 +42,27 @@ extension AppStorage {
     SearchDataModel(searchTerm: search.searchTerm, timestamp: search.timestamp)
   }
 
-  public func storeImage(image: ImageDataModel) async {
+  public func storeImage(image: ImageDataModel) {
     context.insert(transform(image))
+    try? context.save()
   }
 
-  private func requestImages() async -> [ImageData] {
+  private func requestImages() -> [ImageData] {
     let request = FetchDescriptor<ImageData>()
-    let images = try? context.fetch(request)
-    return images ?? []
+    do {
+      let images = try context.fetch(request)
+      return images
+    } catch {
+      return []
+    }
   }
 
-  public func fetchImages() async -> [ImageDataModel] {
-    let images = await requestImages()
+  public func fetchImages() -> [ImageDataModel] {
+    let images = requestImages()
     return images.map { transform($0) }
   }
 
-  public func deleteImage(image: ImageDataModel) async {
+  public func deleteImage(image: ImageDataModel) {
     let imageId = image.imageId
     do {
       try context.delete(model: ImageData.self, where: #Predicate<ImageData> { storedImage in
@@ -68,21 +73,25 @@ extension AppStorage {
     }
   }
 
-  public func storeSearch(search: SearchDataModel) async {
+  public func storeSearch(search: SearchDataModel) {
     context.insert(transform(search))
+    try? context.save()
   }
 
-  private func requestSearch() async -> [SearchData] {
+  private func requestSearch() -> [SearchData] {
     let request = FetchDescriptor<SearchData>()
     let searches = try? context.fetch(request)
+      .sorted(by: { search1, search2 in
+        search1.timestamp > search2.timestamp
+      })
     return searches ?? []
   }
 
-  public func fetchAllSearch() async -> [SearchDataModel] {
-    await requestSearch().map(transform(_:))
+  public func fetchAllSearch() -> [SearchDataModel] {
+    requestSearch().map(transform(_:))
   }
 
-  public func deleteSearch(search: SearchDataModel) async {
+  public func deleteSearch(search: SearchDataModel) {
     let searchTimestamp = search.timestamp
     do {
       try context.delete(model: SearchData.self, where: #Predicate { $0.timestamp == searchTimestamp})

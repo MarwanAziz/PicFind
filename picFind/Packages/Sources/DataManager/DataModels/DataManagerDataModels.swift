@@ -6,7 +6,7 @@
 
 import Foundation
 
-public struct DMSearchDataModel {
+public struct DMSearchDataModel: Hashable {
   public let searchTerm: String
   public let timestamp: Date
   public init(searchTerm: String, timestamp: Date) {

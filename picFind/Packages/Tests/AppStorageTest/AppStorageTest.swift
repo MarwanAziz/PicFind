@@ -28,8 +28,8 @@ final class AppStorageTests: XCTestCase {
     }()
   }
 
-  override func setUp() {
-    super.setUp()
+  override func setUp() async throws {
+    try await super.setUp()
     appStorage = AppStorage.shared
     appStorage.updateModelContainer(container: mockModelContainer)
   }
@@ -44,10 +44,10 @@ final class AppStorageTests: XCTestCase {
     let image = ImageDataModel(imageId: "123", title: "Test Image", imageDescription: "A test image", width: 100, height: 100, size: 1024, views: 10, link: "https://example.com/image.jpg")
 
     // When
-    await appStorage.storeImage(image: image)
+    appStorage.storeImage(image: image)
 
     // Then
-    let storedImages = await appStorage.fetchImages()
+    let storedImages = appStorage.fetchImages()
     XCTAssertEqual(storedImages.count, 1)
     XCTAssertEqual(storedImages.first?.imageId, "123")
   }
@@ -55,10 +55,10 @@ final class AppStorageTests: XCTestCase {
   func testFetchImages() async {
     // Given
     let image = ImageDataModel(imageId: "456", title: "Another Test Image", imageDescription: "Another test image", width: 200, height: 200, size: 2048, views: 20, link: "https://example.com/another_image.jpg")
-    await appStorage.storeImage(image: image)
+    appStorage.storeImage(image: image)
 
     // When
-    let images = await appStorage.fetchImages()
+    let images = appStorage.fetchImages()
 
     // Then
     XCTAssertEqual(images.count, 1)
@@ -68,13 +68,14 @@ final class AppStorageTests: XCTestCase {
   func testDeleteImage() async {
     // Given
     let image = ImageDataModel(imageId: "789", title: "Delete Test Image", imageDescription: "This image will be deleted", width: 150, height: 150, size: 1500, views: 15, link: "https://example.com/delete_image.jpg")
-    await appStorage.storeImage(image: image)
+    appStorage.storeImage(image: image)
+//    try? await appStorage.modelContainer.mainContext.save()
 
     // When
-    await appStorage.deleteImage(image: image)
+    appStorage.deleteImage(image: image)
 
     // Then
-    let images = await appStorage.fetchImages()
+    let images = appStorage.fetchImages()
     XCTAssertEqual(images.count, 0)
   }
 
@@ -85,10 +86,10 @@ final class AppStorageTests: XCTestCase {
     let search = SearchDataModel(searchTerm: "Test", timestamp: Date())
 
     // When
-    await appStorage.storeSearch(search: search)
+    appStorage.storeSearch(search: search)
 
     // Then
-    let storedSearches = await appStorage.fetchAllSearch()
+    let storedSearches = appStorage.fetchAllSearch()
     XCTAssertEqual(storedSearches.count, 1)
     XCTAssertEqual(storedSearches.first?.searchTerm, "Test")
   }
@@ -97,28 +98,28 @@ final class AppStorageTests: XCTestCase {
     // Given
     let search1 = SearchDataModel(searchTerm: "First Search", timestamp: Date())
     let search2 = SearchDataModel(searchTerm: "Second Search", timestamp: Date())
-    await appStorage.storeSearch(search: search1)
-    await appStorage.storeSearch(search: search2)
+    appStorage.storeSearch(search: search1)
+    appStorage.storeSearch(search: search2)
 
     // When
-    let searches = await appStorage.fetchAllSearch()
+    let searches = appStorage.fetchAllSearch()
 
     // Then
     XCTAssertEqual(searches.count, 2)
-    XCTAssertEqual(searches[0].searchTerm, "First Search")
-    XCTAssertEqual(searches[1].searchTerm, "Second Search")
+    XCTAssertEqual("First Search", searches[0].searchTerm)
+    XCTAssertEqual("Second Search", searches[1].searchTerm)
   }
 
   func testDeleteSearch() async {
     // Given
     let search = SearchDataModel(searchTerm: "Delete This", timestamp: Date())
-    await appStorage.storeSearch(search: search)
+    appStorage.storeSearch(search: search)
 
     // When
-    await appStorage.deleteSearch(search: search)
+    appStorage.deleteSearch(search: search)
 
     // Then
-    let searches = await appStorage.fetchAllSearch()
+    let searches = appStorage.fetchAllSearch()
     XCTAssertEqual(searches.count, 0)
   }
 }

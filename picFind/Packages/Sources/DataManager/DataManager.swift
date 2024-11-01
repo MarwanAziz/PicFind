@@ -8,15 +8,15 @@ import Foundation
 import AppStorage
 import ApiServices
 
-protocol DataManager {
+public protocol DataManager {
   func initialise(storage: Storage, apiServices: ApiServices)
   func searchImages(search: DMSearchDataModel) async -> [DMImageDataModel]
-  func saveImage(image: DMImageDataModel) async
-  func deleteSavedImage(image: DMImageDataModel) async
-  func allSavedImages() async -> [DMImageDataModel]
-  func saveSearch(search: DMSearchDataModel) async
-  func deleteSearch(search: DMSearchDataModel) async
-  func allSearch() async -> [DMSearchDataModel]
+  func saveImage(image: DMImageDataModel)
+  func deleteSavedImage(image: DMImageDataModel)
+  func allSavedImages() -> [DMImageDataModel]
+  func saveSearch(search: DMSearchDataModel)
+  func deleteSearch(search: DMSearchDataModel)
+  func allSearch() -> [DMSearchDataModel]
 }
 
 extension DataManager {

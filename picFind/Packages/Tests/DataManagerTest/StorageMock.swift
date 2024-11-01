@@ -11,27 +11,27 @@ final class StorageMock: Storage {
   private var images: [ImageDataModel] = []
   private var searches: [SearchDataModel] = []
 
-  func storeImage(image: ImageDataModel) async {
+  func storeImage(image: ImageDataModel) {
     images.append(image)
   }
 
-  func fetchImages() async -> [ImageDataModel] {
+  func fetchImages() -> [ImageDataModel] {
     return images
   }
 
-  func deleteImage(image: ImageDataModel) async {
+  func deleteImage(image: ImageDataModel) {
     images.removeAll { $0.imageId == image.imageId }
   }
 
-  func storeSearch(search: SearchDataModel) async {
+  func storeSearch(search: SearchDataModel) {
     searches.append(search)
   }
 
-  func fetchAllSearch() async -> [SearchDataModel] {
+  func fetchAllSearch() -> [SearchDataModel] {
     return searches
   }
 
-  func deleteSearch(search: SearchDataModel) async {
+  func deleteSearch(search: SearchDataModel) {
     searches.removeAll { $0.searchTerm == search.searchTerm && $0.timestamp == search.timestamp }
   }
 }

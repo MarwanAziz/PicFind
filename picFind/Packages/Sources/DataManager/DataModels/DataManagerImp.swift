@@ -10,11 +10,14 @@ import ApiServices
 
 public class DataManagerImp: DataManager {
 
-  static let shared: DataManager = DataManagerImp()
+  public static let shared: DataManager = DataManagerImp()
   private var appStorage: Storage = AppStorage.shared
   private var apiServices: ApiServices = ApiServicesImp()
 
-  func initialise(storage: Storage, apiServices: ApiServices) {
+  init() {
+    
+  }
+  public func initialise(storage: Storage, apiServices: ApiServices) {
     appStorage = storage
     self.apiServices = apiServices
   }
@@ -72,28 +75,27 @@ public class DataManagerImp: DataManager {
     )
   }
 
-  private func deleteOldestSearchIfNeeded() async {
-    let searches = await allSearch()
+  private func deleteOldestSearchIfNeeded() {
+    let searches = allSearch()
     if searches.count >= maxStoredNumberOfSearch {
-      let lastSearch = await allSearch().sorted { search1, search2 in
-        search1.timestamp < search2.timestamp
-      }
-        .last
+      let lastSearch = searches.last
       if let lastSearch {
-        await deleteSearch(search: lastSearch)
+        deleteSearch(search: lastSearch)
       }
     }
   }
 
-  public func saveSearch(search: DMSearchDataModel) async {
-    await deleteOldestSearchIfNeeded()
-    await appStorage.storeSearch(search: transform(search))
+  public func saveSearch(search: DMSearchDataModel) {
+    deleteOldestSearchIfNeeded()
+    appStorage.storeSearch(search: transform(search))
   }
 
   public func searchImages(search: DMSearchDataModel) async -> [DMImageDataModel] {
     do {
       let searchResult = try await apiServices.searchImages(searchTerm: search.searchTerm)
-      await saveSearch(search: search)
+      await MainActor.run {
+        saveSearch(search: search)
+      }
       return searchResult.map(transform(_:))
     } catch {
       print("search error: \(error.localizedDescription)")
@@ -101,25 +103,27 @@ public class DataManagerImp: DataManager {
     }
   }
 
-  public func saveImage(image: DMImageDataModel) async {
-    await appStorage.storeImage(image: transform(image))
+  public func saveImage(image: DMImageDataModel) {
+    appStorage.storeImage(image: transform(image))
   }
   
-  public func deleteSavedImage(image: DMImageDataModel) async {
-    await appStorage.deleteImage(image: transform(image))
+  public func deleteSavedImage(image: DMImageDataModel) {
+    appStorage.deleteImage(image: transform(image))
   }
 
-  public func allSavedImages() async -> [DMImageDataModel] {
-    let images = await appStorage.fetchImages()
+  public func allSavedImages() -> [DMImageDataModel] {
+    let images = appStorage.fetchImages()
     return images.map(transform(_:))
   }
 
-  public func deleteSearch(search: DMSearchDataModel) async {
-    await appStorage.deleteSearch(search: transform(search))
+  public func deleteSearch(search: DMSearchDataModel) {
+    appStorage.deleteSearch(search: transform(search))
   }
   
-  public func allSearch() async -> [DMSearchDataModel] {
-    let searches = await appStorage.fetchAllSearch()
-    return searches.map(transform(_:))
+  public func allSearch() -> [DMSearchDataModel] {
+    let searches = appStorage.fetchAllSearch()
+    return searches.map(transform(_:)).sorted { search1, search2 in
+      search1.timestamp > search2.timestamp
+    }
   }
 }
