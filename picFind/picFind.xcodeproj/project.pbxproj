@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BA5DC8D42CD16B5500B4F6DD /* picFindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8D32CD16B5500B4F6DD /* picFindApp.swift */; };
 		BA5DC8D62CD16B5500B4F6DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8D52CD16B5500B4F6DD /* ContentView.swift */; };
-		BA5DC8D82CD16B5500B4F6DD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8D72CD16B5500B4F6DD /* Item.swift */; };
 		BA5DC8DA2CD16B5700B4F6DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5DC8D92CD16B5700B4F6DD /* Assets.xcassets */; };
 		BA5DC8DE2CD16B5700B4F6DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5DC8DD2CD16B5700B4F6DD /* Preview Assets.xcassets */; };
 		BA5DC8E82CD16B5700B4F6DD /* picFindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5DC8E72CD16B5700B4F6DD /* picFindTests.swift */; };
@@ -18,6 +17,18 @@
 		BA5DC90B2CD1A5FA00B4F6DD /* ApiServices in Frameworks */ = {isa = PBXBuildFile; productRef = BA5DC90A2CD1A5FA00B4F6DD /* ApiServices */; };
 		BA92758A2CD2C4BD003CA3CC /* AppStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BA9275892CD2C4BD003CA3CC /* AppStorage */; };
 		BA92758C2CD30292003CA3CC /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = BA92758B2CD30292003CA3CC /* DataManager */; };
+		BA9275902CD30635003CA3CC /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92758F2CD30635003CA3CC /* SearchTabView.swift */; };
+		BA9275922CD30659003CA3CC /* SearchTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9275912CD30659003CA3CC /* SearchTabViewModel.swift */; };
+		BA9275952CD41633003CA3CC /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9275942CD41633003CA3CC /* HomeTabView.swift */; };
+		BA9275982CD41E1A003CA3CC /* ImagesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9275972CD41E1A003CA3CC /* ImagesGridView.swift */; };
+		BA92759C2CD41E46003CA3CC /* ImagesGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92759B2CD41E46003CA3CC /* ImagesGridViewModel.swift */; };
+		BA92759E2CD42304003CA3CC /* ImagesGridViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92759D2CD42304003CA3CC /* ImagesGridViewItem.swift */; };
+		BA9275A02CD42B3A003CA3CC /* ImagesGridViewItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92759F2CD42B3A003CA3CC /* ImagesGridViewItemModel.swift */; };
+		BA9275A32CD47C44003CA3CC /* FavouriteImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9275A22CD47C44003CA3CC /* FavouriteImagesView.swift */; };
+		BA9275A52CD47C6A003CA3CC /* FavouriteImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9275A42CD47C6A003CA3CC /* FavouriteImagesViewModel.swift */; };
+		BA9275A72CD47F0D003CA3CC /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9275A62CD47F0D003CA3CC /* ImageViewModel.swift */; };
+		BA9275A92CD497B1003CA3CC /* ImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9275A82CD497B1003CA3CC /* ImageDetailsView.swift */; };
+		BAAD43182CD4C062004B3ACF /* SearchTabViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD43172CD4C062004B3ACF /* SearchTabViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +52,6 @@
 		BA5DC8D02CD16B5500B4F6DD /* picFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = picFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5DC8D32CD16B5500B4F6DD /* picFindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picFindApp.swift; sourceTree = "<group>"; };
 		BA5DC8D52CD16B5500B4F6DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BA5DC8D72CD16B5500B4F6DD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BA5DC8D92CD16B5700B4F6DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA5DC8DB2CD16B5700B4F6DD /* picFind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = picFind.entitlements; sourceTree = "<group>"; };
 		BA5DC8DD2CD16B5700B4F6DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -52,6 +62,18 @@
 		BA5DC8F32CD16B5700B4F6DD /* picFindUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picFindUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BA5DC9072CD1A47E00B4F6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BA5DC9092CD1A53D00B4F6DD /* Packages */ = {isa = PBXFileReference; lastKnownFileType = text; path = Packages; sourceTree = SOURCE_ROOT; };
+		BA92758F2CD30635003CA3CC /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
+		BA9275912CD30659003CA3CC /* SearchTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabViewModel.swift; sourceTree = "<group>"; };
+		BA9275942CD41633003CA3CC /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		BA9275972CD41E1A003CA3CC /* ImagesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesGridView.swift; sourceTree = "<group>"; };
+		BA92759B2CD41E46003CA3CC /* ImagesGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesGridViewModel.swift; sourceTree = "<group>"; };
+		BA92759D2CD42304003CA3CC /* ImagesGridViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesGridViewItem.swift; sourceTree = "<group>"; };
+		BA92759F2CD42B3A003CA3CC /* ImagesGridViewItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesGridViewItemModel.swift; sourceTree = "<group>"; };
+		BA9275A22CD47C44003CA3CC /* FavouriteImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteImagesView.swift; sourceTree = "<group>"; };
+		BA9275A42CD47C6A003CA3CC /* FavouriteImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteImagesViewModel.swift; sourceTree = "<group>"; };
+		BA9275A62CD47F0D003CA3CC /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		BA9275A82CD497B1003CA3CC /* ImageDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsView.swift; sourceTree = "<group>"; };
+		BAAD43172CD4C062004B3ACF /* SearchTabViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +128,11 @@
 		BA5DC8D22CD16B5500B4F6DD /* picFind */ = {
 			isa = PBXGroup;
 			children = (
+				BA92758D2CD30605003CA3CC /* UIViews */,
 				BA5DC9082CD1A4F000B4F6DD /* AppLibraries */,
 				BA5DC9072CD1A47E00B4F6DD /* Info.plist */,
 				BA5DC8D32CD16B5500B4F6DD /* picFindApp.swift */,
 				BA5DC8D52CD16B5500B4F6DD /* ContentView.swift */,
-				BA5DC8D72CD16B5500B4F6DD /* Item.swift */,
 				BA5DC8D92CD16B5700B4F6DD /* Assets.xcassets */,
 				BA5DC8DB2CD16B5700B4F6DD /* picFind.entitlements */,
 				BA5DC8DC2CD16B5700B4F6DD /* Preview Content */,
@@ -130,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5DC8E72CD16B5700B4F6DD /* picFindTests.swift */,
+				BAAD43172CD4C062004B3ACF /* SearchTabViewModelTest.swift */,
 			);
 			path = picFindTests;
 			sourceTree = "<group>";
@@ -156,6 +179,56 @@
 				BA5DC9092CD1A53D00B4F6DD /* Packages */,
 			);
 			path = AppLibraries;
+			sourceTree = "<group>";
+		};
+		BA92758D2CD30605003CA3CC /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA9275A12CD47C16003CA3CC /* FavouriteImagesView */,
+				BA9275962CD41DFA003CA3CC /* ImagesGridView */,
+				BA9275932CD41620003CA3CC /* TabView */,
+				BA92758E2CD30612003CA3CC /* SearchTabUIView */,
+				BA9275A62CD47F0D003CA3CC /* ImageViewModel.swift */,
+				BA9275A82CD497B1003CA3CC /* ImageDetailsView.swift */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		BA92758E2CD30612003CA3CC /* SearchTabUIView */ = {
+			isa = PBXGroup;
+			children = (
+				BA92758F2CD30635003CA3CC /* SearchTabView.swift */,
+				BA9275912CD30659003CA3CC /* SearchTabViewModel.swift */,
+			);
+			path = SearchTabUIView;
+			sourceTree = "<group>";
+		};
+		BA9275932CD41620003CA3CC /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				BA9275942CD41633003CA3CC /* HomeTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		BA9275962CD41DFA003CA3CC /* ImagesGridView */ = {
+			isa = PBXGroup;
+			children = (
+				BA9275972CD41E1A003CA3CC /* ImagesGridView.swift */,
+				BA92759B2CD41E46003CA3CC /* ImagesGridViewModel.swift */,
+				BA92759D2CD42304003CA3CC /* ImagesGridViewItem.swift */,
+				BA92759F2CD42B3A003CA3CC /* ImagesGridViewItemModel.swift */,
+			);
+			path = ImagesGridView;
+			sourceTree = "<group>";
+		};
+		BA9275A12CD47C16003CA3CC /* FavouriteImagesView */ = {
+			isa = PBXGroup;
+			children = (
+				BA9275A22CD47C44003CA3CC /* FavouriteImagesView.swift */,
+				BA9275A42CD47C6A003CA3CC /* FavouriteImagesViewModel.swift */,
+			);
+			path = FavouriteImagesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +366,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9275A52CD47C6A003CA3CC /* FavouriteImagesViewModel.swift in Sources */,
 				BA5DC8D62CD16B5500B4F6DD /* ContentView.swift in Sources */,
-				BA5DC8D82CD16B5500B4F6DD /* Item.swift in Sources */,
+				BA9275902CD30635003CA3CC /* SearchTabView.swift in Sources */,
+				BA9275A02CD42B3A003CA3CC /* ImagesGridViewItemModel.swift in Sources */,
 				BA5DC8D42CD16B5500B4F6DD /* picFindApp.swift in Sources */,
+				BA92759E2CD42304003CA3CC /* ImagesGridViewItem.swift in Sources */,
+				BA9275A92CD497B1003CA3CC /* ImageDetailsView.swift in Sources */,
+				BA92759C2CD41E46003CA3CC /* ImagesGridViewModel.swift in Sources */,
+				BA9275952CD41633003CA3CC /* HomeTabView.swift in Sources */,
+				BA9275922CD30659003CA3CC /* SearchTabViewModel.swift in Sources */,
+				BA9275A32CD47C44003CA3CC /* FavouriteImagesView.swift in Sources */,
+				BA9275982CD41E1A003CA3CC /* ImagesGridView.swift in Sources */,
+				BA9275A72CD47F0D003CA3CC /* ImageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAD43182CD4C062004B3ACF /* SearchTabViewModelTest.swift in Sources */,
 				BA5DC8E82CD16B5700B4F6DD /* picFindTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"picFind/Preview Content\"";
-				DEVELOPMENT_TEAM = HCRWXC86V2;
+				DEVELOPMENT_TEAM = XBJQCEWW5M;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -476,6 +560,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marwanaziz.picfind.picFind;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = net.marwanaziz.picFinda;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = net.marwanaziz.picFinda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -494,7 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"picFind/Preview Content\"";
-				DEVELOPMENT_TEAM = HCRWXC86V2;
+				DEVELOPMENT_TEAM = XBJQCEWW5M;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -515,6 +601,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marwanaziz.picfind.picFind;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = net.marwanaziz.picFinda;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = net.marwanaziz.picFinda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
